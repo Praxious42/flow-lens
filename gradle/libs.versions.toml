@@ -15,7 +15,7 @@ qodana = "2025.1.1"
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 opentest4j = { group = "org.opentest4j", name = "opentest4j", version.ref = "opentest4j" }
-logback = { group = "ch.qos.logback", name = "logback-classic", version = "1.5.18" }
+logback = { group = "ch.qos.logback", name = "logback-classic", version = "1.5.21" }
 kotlinLogging = { group = "io.github.oshai", name = "kotlin-logging-jvm", version.ref = "kotlinLogging" }
 
 [plugins]
