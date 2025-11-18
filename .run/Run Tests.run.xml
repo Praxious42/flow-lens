@@ -14,7 +14,7 @@
           <option value="check" />
         </list>
       </option>
-      <option name="vmOptions" value="" />
+      <option name="vmOptions" value="-Didea.is.internal=true -Didea.log.level=INFO -Didea.log.use.console=true" />
     </ExternalSystemSettings>
     <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
     <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>

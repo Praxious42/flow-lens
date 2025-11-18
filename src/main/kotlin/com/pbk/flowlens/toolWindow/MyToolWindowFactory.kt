@@ -1,4 +1,4 @@
-package com.github.praxious42.flowlens.toolWindow
+package com.pbk.flowlens.toolWindow
 
 import com.intellij.openapi.components.service
 import com.intellij.openapi.diagnostic.thisLogger
@@ -8,8 +8,8 @@ import com.intellij.openapi.wm.ToolWindowFactory
 import com.intellij.ui.components.JBLabel
 import com.intellij.ui.components.JBPanel
 import com.intellij.ui.content.ContentFactory
-import com.github.praxious42.flowlens.MyBundle
-import com.github.praxious42.flowlens.services.MyProjectService
+import com.pbk.flowlens.MyBundle
+import com.pbk.flowlens.services.MyProjectService
 import javax.swing.JButton
 
 
@@ -37,7 +37,9 @@ class MyToolWindowFactory : ToolWindowFactory {
             add(label)
             add(JButton(MyBundle.message("shuffle")).apply {
                 addActionListener {
-                    label.text = MyBundle.message("randomLabel", service.getRandomNumber())
+                    val number = service.getRandomNumber()
+                    thisLogger().info("Generated random number: $number")
+                    label.text = MyBundle.message("randomLabel", number)
                 }
             })
         }

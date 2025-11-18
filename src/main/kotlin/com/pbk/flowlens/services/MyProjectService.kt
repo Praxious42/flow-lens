@@ -1,9 +1,9 @@
-package com.github.praxious42.flowlens.services
+package com.pbk.flowlens.services
 
 import com.intellij.openapi.components.Service
 import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.openapi.project.Project
-import com.github.praxious42.flowlens.MyBundle
+import com.pbk.flowlens.MyBundle
 
 @Service(Service.Level.PROJECT)
 class MyProjectService(project: Project) {

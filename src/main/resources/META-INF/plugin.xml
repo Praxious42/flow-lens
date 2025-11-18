@@ -1,15 +1,50 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.praxious42.flowlens</id>
-    <name>flow-lens</name>
+    <id>com.pbk.flowlens</id>
+    <name>FlowLens</name>
     <vendor>praxious42</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
+    <!-- Resource bundle used for i18n strings referenced via message('key') macros. -->
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.praxious42.flowlens.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="com.github.praxious42.flowlens.startup.MyProjectActivity" />
+        <toolWindow factoryClass="com.pbk.flowlens.toolWindow.MyToolWindowFactory" id="FlowLens" icon="/img/flowlens.png"/>
+
+        <postStartupActivity implementation="com.pbk.flowlens.startup.MyProjectActivity" />
     </extensions>
+
+    <!--
+      Actions section registers UI actions (menu items, toolbar buttons, shortcuts).
+      Read more: https://plugins.jetbrains.com/docs/intellij/basic-action-system.html
+    -->
+    <actions>
+        <!--
+          action: Declares a single action the user can invoke.
+          - id: Unique identifier for this action in the IDE. Use reverse-DNS to avoid collisions.
+          - class: Fully-qualified Kotlin/Java class implementing com.intellij.openapi.actionSystem.AnAction.
+          - text: The label shown in menus/toolbars. For i18n, use message('key') referencing resource-bundle above.
+          - description: Tooltip/longer description shown in UI (e.g., status bar, tooltips). Use message('key') for i18n.
+          - icon: Optional icon displayed next to the action. Path is relative to resources root.
+        -->
+        <action
+                id="com.pbk.flowlens.actions.RunFlowLensAnalysis"
+                class="com.pbk.flowlens.actions.RunFlowLensAnalysisAction"
+                text="Message('action.RunFlowLensAnalysis.Text')"
+                description="message('action.RunFlowLensAnalysis.description')">
+            <!--
+              add-to-group: Places the action into an existing IDE group (menu/toolbar).
+              - group-id: The target group. "ToolsMenu" adds it under the Tools menu.
+              - anchor: Position relative to existing items (first, last, before, after).
+            -->
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <!--
+              Optional: You can define keyboard shortcuts here.
+              Example:
+              <keyboard-shortcut first-keystroke="ctrl alt F" keymap="Default for Windows"/>
+            -->
+        </action>
+    </actions>
+
 </idea-plugin>

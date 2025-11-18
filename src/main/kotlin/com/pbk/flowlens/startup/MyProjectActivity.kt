@@ -1,4 +1,4 @@
-package com.github.praxious42.flowlens.startup
+package com.pbk.flowlens.startup
 
 import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.openapi.project.Project

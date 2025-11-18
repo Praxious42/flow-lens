@@ -1,4 +1,4 @@
-package com.github.praxious42.flowlens
+package com.pbk.flowlens
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.NonNls

@@ -2,10 +2,12 @@
 # libraries
 junit = "4.13.2"
 opentest4j = "1.3.0"
+logback = "1.5.18"
+kotlinLogging = "5.1.0"
 
 # plugins
 changelog = "2.4.0"
-intelliJPlatform = "2.9.0"
+intelliJPlatform = "2.10.4"
 kotlin = "2.1.20"
 kover = "0.9.1"
 qodana = "2025.1.1"
@@ -13,6 +15,8 @@ qodana = "2025.1.1"
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 opentest4j = { group = "org.opentest4j", name = "opentest4j", version.ref = "opentest4j" }
+logback = { group = "ch.qos.logback", name = "logback-classic", version = "1.5.18" }
+kotlinLogging = { group = "io.github.oshai", name = "kotlin-logging-jvm", version.ref = "kotlinLogging" }
 
 [plugins]
 changelog = { id = "org.jetbrains.changelog", version.ref = "changelog" }
